@@ -1,0 +1,58 @@
+// Array of 5 JavaScript objects
+const users = [
+    { id: 1, name: "Venti", age: 20, city: "Mondstadt", active: true },
+    { id: 2, name: "Zhongli", age: 30, city: "Liyue", active: false },
+    { id: 3, name: "Raiden Ei", age: 27, city: "Inazuma", active: true },
+    { id: 4, name: "Nahida", age: 11, city: "Sumeru", active: true },
+    { id: 5, name: "Furina", age: 19, city: "Fontaine", active: false }
+];
+
+// forEach()
+users.forEach(users => console.log(users));
+
+// push()
+users.push({ id: 5, name: "Mavuika", age: 30, city: "Natlan", active: true});
+console.log("After push:", users);
+
+// unshift()
+users.unshift({ id: 0, name: "Columbina", age: 18, city: "Nodkrai", active: false });
+console.log("After unshift:", users);
+
+// filter()
+
+// to get active 
+const activeUsers = users.filter(user => user.active);
+console.log("Active users:", activeUsers);
+
+// older than 30
+const usersOver30 = users.filter(user => user.age > 20);
+console.log("Users over 20:", usersOver30);
+
+// map()
+
+// array of ages
+const userAges = users.map(user => user.age);
+console.log("User ages:", userAges);
+
+// reduces()
+
+// calculate total ages
+const totalAge = users.reduce((accumulator, user) => accumulator + user.age, 0);
+console.log("Total age of all users:", totalAge);
+console.log("Average age:", totalAge / users.length);
+
+// some()
+
+// to check if any user is from certain place
+const hasSeattleUser = users.some(user => user.city === "Inazuma");
+console.log("Any user from Inazuma?", hasSeattleUser);
+
+// every()
+
+// to check if all users have names
+const allHaveNames = users.every(user => user.name && user.name.length > 0);
+console.log("All users have names?", allHaveNames);
+
+// to check if all users are above 18
+const allAdults = users.every(user => user.age >= 18);
+console.log("All users are adults?", allAdults);
