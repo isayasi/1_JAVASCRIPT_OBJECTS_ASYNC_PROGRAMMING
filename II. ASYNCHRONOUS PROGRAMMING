@@ -1,0 +1,151 @@
+// A.
+function greetUserA(name) {
+    return new Promise((resolve, reject) => {
+        if (!name) reject("Input is empty!");
+        else resolve(`Good day, ${name}!`);
+    });
+}
+
+// Simulate input
+let inputName = "Quenzzy"; // to test rejection, change into ""
+
+greetUserA(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// B.
+function greetUserB(name) {
+    return new Promise((resolve, reject) => {
+        if (!name) reject("Input is empty!");
+        else setTimeout(() => resolve(`Good day, ${name}!`), 5000);
+    });
+}
+
+// Simulate input
+let inputName = "Q"; // change this to "" to test rejection
+
+greetUserB(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// C.
+function greetUserC(name) {
+    return new Promise((resolve, reject) => {
+        if (!name) reject("Input is empty!");
+        else setTimeout(() => resolve(`Good day, ${name}!`), 7000);
+    });
+}
+
+// Simulate input
+let inputName = "Quenzzy"; // change this to "" to test rejection
+
+greetUserC(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// D.
+function greetUserD(name) {
+    return new Promise((resolve, reject) => {
+        if (!name) reject("Input is empty!");
+        else resolve(`Good day, ${name.toUpperCase()}!`);
+    });
+}
+
+// Simulate input
+let inputName = "Quenzzy"; // change this to "" to test rejection
+
+greetUserD(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// E.
+function greetUserE(name) {
+    return new Promise((resolve, reject) => {
+        if (!name || name.length < 5) reject("Invalid input!");
+        else resolve(`Good day, ${name.toUpperCase()}!`);
+    });
+}
+
+// Simulate input
+let inputName = "Quenzzy"; // try "Ana" or "" to test rejection
+
+greetUserE(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// F.
+function greetUserF(name) {
+    return new Promise((resolve, reject) => {
+        if (!name || name.length < 5) reject("Invalid input!");
+        else {
+            let reversed = name.split("").reverse().join("");
+            resolve(`Good day, ${reversed}!`);
+        }
+    });
+}
+
+// Simulate input
+let inputName = "Ana"; // try "Ana" or "" to test rejection
+
+greetUserF(inputName)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// G.
+function squareNumber(num) {
+    return new Promise((resolve, reject) => {
+        if (!Number.isInteger(num)) reject("Not an integer!");
+        else resolve(`${num} is ${num * num} when doubled`);
+    });
+}
+
+// Simulate input
+let inputNum = "abc"; // try 6.5 or "abc" to test rejection
+
+squareNumber(inputNum)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// H.
+function cubeNumber(num) {
+    return new Promise((resolve, reject) => {
+        if (!Number.isInteger(num)) reject("Not an integer!");
+        else setTimeout(() => resolve(`${num} is ${num ** 3} when cubed`), 5000);
+    });
+}
+
+// Simulate input
+let inputNum = "abc"; // try 3.5 or "abc" to test rejection
+
+cubeNumber(inputNum)
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err));
+
+// I.
+let failCount = 0;
+
+function validateNumber(num) {
+    return new Promise((resolve, reject) => {
+        if (num >= 1 && num <= 10) {
+            resolve(`Yes ${num} is between 1 and 10`);
+        } else {
+            failCount++;
+            if (failCount >= 3) {
+                reject("You already failed three times, so no chances anymore");
+            } else {
+                reject("Invalid number, try again!");
+            }
+        }
+    });
+}
+
+// --- Simulate tests ---
+let testInputs = [11, 3, 0, 4]; 
+
+testInputs.forEach(num => {
+    validateNumber(num)
+        .then(msg => console.log(msg))
+        .catch(err => console.log(err));
+});
+
+
