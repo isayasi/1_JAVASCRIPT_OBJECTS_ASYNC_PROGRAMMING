@@ -1,4 +1,7 @@
-// A.
+// A.	We first have an input field asking for the user’s name. 
+Create a Promise that rejects if that input field is empty, and 
+resolves with the input, greeting the user with “good day, <name of user here>!” on the DOM
+
 function greetUserA(name) {
     return new Promise((resolve, reject) => {
         if (!name) reject("Input is empty!");
@@ -13,7 +16,10 @@ greetUserA(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// B.
+// B.	We first have an input field asking for the user’s name. 
+Create a Promise that rejects if that input field is empty, and 
+resolves after 5 seconds with the input, greeting the user with “good day, <name of user here>!” on the DOM. 
+
 function greetUserB(name) {
     return new Promise((resolve, reject) => {
         if (!name) reject("Input is empty!");
@@ -28,7 +34,10 @@ greetUserB(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// C.
+// C.	We first have an input field asking for the user’s name. 
+Create a Promise that rejects if that input field is empty, and 
+resolves after 7 seconds with the input, greeting the user with “good day, <name of user here>!” on the DOM. 
+
 function greetUserC(name) {
     return new Promise((resolve, reject) => {
         if (!name) reject("Input is empty!");
@@ -43,7 +52,10 @@ greetUserC(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// D.
+// D.	We first have an input field asking for the user’s name. 
+Create a Promise that rejects if that input field is empty, and 
+resolves with the input being in uppercase format, greeting the user with “good day, <name of user here>!” on the DOM. 
+
 function greetUserD(name) {
     return new Promise((resolve, reject) => {
         if (!name) reject("Input is empty!");
@@ -58,7 +70,10 @@ greetUserD(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// E.
+// E.	We first have an input field asking for the user’s name.
+Create a Promise that rejects if that input field is empty and is less than five characters, and 
+resolves with the input being in uppercase format, greeting the user with “good day, <name of user here>!” on the DOM. 
+
 function greetUserE(name) {
     return new Promise((resolve, reject) => {
         if (!name || name.length < 5) reject("Invalid input!");
@@ -73,7 +88,10 @@ greetUserE(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// F.
+// F.	We first have an input field asking for the user’s name. 
+Create a Promise that rejects if that input field is empty and is less than five characters, and 
+resolves with the input being in reversed format, greeting the user with “good day, <name of user here>!” on the DOM. 
+
 function greetUserF(name) {
     return new Promise((resolve, reject) => {
         if (!name || name.length < 5) reject("Invalid input!");
@@ -91,7 +109,10 @@ greetUserF(inputName)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// G.
+//G.	We first have an input field asking the user to input a number. 
+Create a Promise that rejects if the inputted value is not an integer and 
+resolves with the integer input being squared, printing the string “<number inputted> is <squared number> when doubled ” on the DOM. 
+
 function squareNumber(num) {
     return new Promise((resolve, reject) => {
         if (!Number.isInteger(num)) reject("Not an integer!");
@@ -106,7 +127,10 @@ squareNumber(inputNum)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// H.
+// H.	We first have an input field asking the user to input a number. 
+Create a Promise that rejects if the inputted value is not an integer and 
+resolves after 5 seconds with the integer input being cubed, printing the string “<number inputted> is <cubed number> when cubed” on the DOM. 
+
 function cubeNumber(num) {
     return new Promise((resolve, reject) => {
         if (!Number.isInteger(num)) reject("Not an integer!");
@@ -121,7 +145,11 @@ cubeNumber(inputNum)
     .then(msg => console.log(msg))
     .catch(err => console.log(err));
 
-// I.
+//I.	We first have an input field asking the user to input a number. 
+Create a Promise that rejects if the inputted value is not between 1 and 10 and 
+resolves by printing the string “Yes <number inputted> is between 1 and 10” on the DOM.
+If the user fails three times to give a number between 1 and 10, we’ll just print “You already failed three times, so no chances anymore”. 
+
 let failCount = 0;
 
 function validateNumber(num) {
